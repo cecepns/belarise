@@ -4,6 +4,10 @@ import AOS from "aos";
 import SEO from "../components/Common/SEO";
 import {
   ArrowRight,
+  CircleCheck as CheckCircle,
+  Users,
+  Award,
+  Zap,
 } from "lucide-react";
 import { bannersAPI, productsAPI } from "../utils/api";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -51,12 +55,12 @@ const Home = () => {
     };
   }, []);
 
-  // const stats = [
-  //   { icon: Users, label: "Happy Clients", value: "500+" },
-  //   { icon: Award, label: "Years Experience", value: "15+" },
-  //   { icon: Zap, label: "Projects Completed", value: "1000+" },
-  //   { icon: CheckCircle, label: "Success Rate", value: "99%" },
-  // ];
+  const stats = [
+    { icon: Users, label: "Happy Clients", value: "500+" },
+    { icon: Award, label: "Years Experience", value: "15+" },
+    { icon: Zap, label: "Projects Completed", value: "1000+" },
+    { icon: CheckCircle, label: "Success Rate", value: "99%" },
+  ];
 
   return (
     <>
@@ -196,7 +200,7 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      {/* <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -217,7 +221,7 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Featured Products */}
       <section className="py-20 bg-gray-50">
