@@ -271,7 +271,7 @@ const Products = () => {
               const quill = quillRef.current?.getEditor();
               if (quill) {
                 const range = quill.getSelection(true);
-                quill.insertEmbed(range.index, 'image', response.data.url);
+                quill.insertEmbed(range.index, 'image', getImageUrl(response.data.url));
               }
             } catch (error) {
               console.error('Error uploading image:', error);

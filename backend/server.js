@@ -676,7 +676,7 @@ app.post('/api/upload/quill-image', authenticateToken, upload.single('image'), (
       return res.status(400).json({ success: false, message: 'No image file provided' });
     }
 
-    const imageUrl = `http://localhost:${PORT}/uploads/${req.file.filename}`;
+    const imageUrl = `/uploads/${req.file.filename}`;
 
     res.json({
       success: true,
