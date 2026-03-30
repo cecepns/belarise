@@ -1,6 +1,8 @@
 import Header from './Header';
 import Footer from './Footer';
 import WhatsAppButton from '../Common/WhatsAppButton';
+import InstagramButton from '../Common/InstagramButton';
+import ShopeeButton from '../Common/ShopeeButton';
 import { Outlet } from 'react-router-dom';
 
 const Layout = ({ children }) => {
@@ -12,6 +14,8 @@ const Layout = ({ children }) => {
       </main>
       <Footer />
       <WhatsAppButton />
+      <ShopeeButton />
+      <InstagramButton />
     </div>
   );
 };

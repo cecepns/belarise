@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import AOS from 'aos';
-import { Save, Building, MapPin, Phone, Mail, Globe, Info, Clock, Target, Image as ImageIcon } from 'lucide-react';
+import { Save, Building, MapPin, Phone, Mail, Globe, Info, Clock, Target, Image as ImageIcon, Instagram, ShoppingBag } from 'lucide-react';
 import { settingsAPI, uploadAPI, getImageUrl } from '../../utils/api';
 
 const Settings = () => {
@@ -18,7 +18,9 @@ const Settings = () => {
     company_history: '',
     company_vision: '',
     company_mission: '',
-    facebook_pixel_id: ''
+    facebook_pixel_id: '',
+    instagram_url: '',
+    shopee_url: ''
   });
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -253,6 +255,56 @@ const Settings = () => {
             This text is shown in the Company History section on the About page. Use blank lines to separate paragraphs.
           </p>
         </div>
+        </div>
+
+        {/* Social Media Links */}
+        <div className="bg-white rounded-lg shadow-md p-6" data-aos="fade-up">
+          <div className="flex items-center mb-6">
+            <Globe className="text-primary-600 mr-3" size={24} />
+            <h2 className="text-lg font-semibold text-gray-900">Social Media Links</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Instagram URL
+              </label>
+              <div className="relative">
+                <Instagram className="absolute left-3 top-1/2 transform -translate-y-1/2 text-pink-500" size={16} />
+                <input
+                  type="url"
+                  name="instagram_url"
+                  value={settings.instagram_url || ''}
+                  onChange={handleInputChange}
+                  className="input-field pl-10"
+                  placeholder="https://www.instagram.com/youraccount"
+                />
+              </div>
+              <p className="text-sm text-gray-500 mt-2">
+                Link ini digunakan untuk tombol floating Instagram di website.
+              </p>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Shopee URL
+              </label>
+              <div className="relative">
+                <ShoppingBag className="absolute left-3 top-1/2 transform -translate-y-1/2 text-orange-500" size={16} />
+                <input
+                  type="url"
+                  name="shopee_url"
+                  value={settings.shopee_url || ''}
+                  onChange={handleInputChange}
+                  className="input-field pl-10"
+                  placeholder="https://shopee.co.id/yourshop"
+                />
+              </div>
+              <p className="text-sm text-gray-500 mt-2">
+                Link ini digunakan untuk tombol floating Shopee di website.
+              </p>
+            </div>
+          </div>
         </div>
 
       {/* Home About Section */}
